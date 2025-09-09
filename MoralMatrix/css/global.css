@@ -1,0 +1,527 @@
+/*=======Super Admin Create========*/
+/* Page Background */
+#createAdminAccount {
+  background: #f4f6f9;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+}
+
+/* Card Container */
+.entry-box {
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* Heading */
+.entry-box h1 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+/* Inputs */
+.entry-box input[type="email"],
+.entry-box input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border 0.3s;
+}
+
+.entry-box input:focus {
+  border-color: #28a745;
+  outline: none;
+}
+
+/* Submit Button */
+.entry-box input[type="submit"] {
+  width: 100%;
+  background: #28a745;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background 0.3s;
+}
+
+.entry-box input[type="submit"]:hover {
+  background: #218838;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .entry-box {
+    margin: 0 20px;
+    padding: 20px;
+  }
+}
+
+/*=====DASHBOARDS=======*/
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px;
+}
+
+/* Top Section */
+.top-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.top-container h2 {
+  margin-bottom: 15px;
+  font-size: 36px;   /* bigger */
+  font-weight: 800;
+  color: #222;
+}
+
+/* Add Users button */
+.top-container .btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.top-container .btn:hover {
+  background-color: #0056b3;
+}
+
+/* Subheadings */
+h3 {
+  text-align: center;
+  margin: 20px 0 10px;
+}
+
+/* Search / Filter */
+.searchBar,
+.filter-container {
+  margin: 15px 0;
+  text-align: center;
+}
+
+.searchBar input,
+.filter-container select {
+  padding: 10px 14px;
+  width: 300px;
+  max-width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Card container */
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px 20px;
+  margin: 15px auto;
+  max-width: 800px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+/* Left section: photo + info */
+.card .left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Profile photo */
+.card .left img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #28a745;
+}
+
+/* Info section styled like the sketch */
+.card .left .info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-family: Arial, sans-serif;
+}
+
+/* Mobile (first line, smaller and muted) */
+.card .left .info strong:nth-of-type(1),
+.card .left .info br:nth-of-type(1) {
+  font-size: 13px;
+  color: #555;
+  font-weight: normal;
+}
+
+/* Name (second line, bold & larger) */
+.card .left .info strong:nth-of-type(2) {
+  font-size: 18px;
+  font-weight: bold;
+  color: #222;
+}
+
+/* Strand (third line) */
+.card .left .info strong:nth-of-type(3) {
+  font-size: 14px;
+  font-weight: 600;
+  color: #28a745;
+}
+
+/* Section (fourth line) */
+.card .left .info strong:nth-of-type(4) {
+  font-size: 14px;
+  font-weight: 600;
+  color: #007bff;
+}
+
+/* Actions section */
+.card .actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card .actions button {
+  background: #28a745;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* Edit button */
+.card .actions button:nth-child(1) {
+  background: #007bff;
+}
+.card .actions button:nth-child(1):hover {
+  background: #0056b3;
+}
+
+/* Delete button */
+.card .actions button:nth-child(2) {
+  background: #dc3545;
+}
+.card .actions button:nth-child(2):hover {
+  background: #a71d2a;
+}
+
+/*=========Add Accounts========*/
+/* Container styling */
+form {
+  max-width: 1000px;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+/* Headings */
+h2, h4 {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Split into two columns */
+.student-form {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.student-form .left,
+.student-form .right {
+  flex: 1;
+}
+
+/* Input fields */
+form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* Password with button */
+.password-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.password-group input {
+  flex: 1;
+}
+
+/* Buttons */
+button,
+input[type="submit"] {
+  display: block;
+  width: 100%;
+  background: #28a745;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background: #218838;
+}
+
+/* Generate button different */
+button.generate {
+  background: #007bff;
+}
+
+button.generate:hover {
+  background: #0056b3;
+}
+
+/* File input */
+input[type="file"] {
+  padding: 5px;
+}
+
+/* Center the main heading */
+h2 {
+  text-align: center;
+}
+
+/* Center the "Return to Dashboard" button */
+.return-dashboard {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Center Account Type field */
+.account-type {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.account-type label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.account-type select {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Center container utility */
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Style for account type wrapper */
+.account-type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Label */
+.account-type label {
+  color: #333;
+}
+
+/* Custom select box */
+.account-type select {
+  padding: 10px 15px;
+  border: 2px solid #28a745;
+  border-radius: 8px;
+  background: #f9f9f9;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover + focus effects */
+.account-type select:hover {
+  border-color: #218838;
+  background: #ffffff;
+}
+
+.account-type select:focus {
+  outline: none;
+  border-color: #1e7e34;
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+}
+
+.image-preview {
+  width: 100%;
+  text-align: center;
+  margin: 15px 0;
+}
+
+.image-preview img {
+  display: inline-block;
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .student-form {
+    flex-direction: column;
+  }
+}
+
+/*======Edit Account======*/
+/* Form container */
+.form-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 25px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+/* Headings */
+.form-container h3 {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Labels */
+.form-container label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #444;
+}
+
+/* Inputs & Selects */
+.form-container input[type="text"],
+.form-container input[type="number"],
+.form-container input[type="email"],
+.form-container select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border 0.3s;
+}
+
+.form-container input:focus,
+.form-container select:focus {
+  border-color: #28a745;
+  outline: none;
+}
+
+/* Profile Picture */
+#photoPreview {
+  display: block;
+  margin: 10px auto;
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
+
+/* File input */
+.form-container input[type="file"] {
+  display: block;
+  margin: 10px auto 20px auto;
+}
+
+/* Buttons */
+.btn_submit {
+  display: block;
+  width: 100%;
+  background: #28a745;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn_submit:hover {
+  background: #218838;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 15px;
+  }
+}
+
