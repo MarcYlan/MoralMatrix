@@ -1,68 +1,49 @@
 /*=======Super Admin Create========*/
 /* Page Background */
 #createAdminAccount {
-  background: #f4f6f9;
-  font-family: Arial, sans-serif;
+  background: black;
+  background-size: cover;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   height: 100vh;
   display: flex;
-  justify-content: center; /* horizontal center */
-  align-items: center;     /* vertical center */
+  justify-content: center;
+  align-items: center;
 }
 
 /* Card Container */
 .entry-box {
-  width: 100%;
-  max-width: 400px;
-  padding: 30px;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
 }
 
-/* Heading */
-.entry-box h1 {
-  font-size: 22px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 25px;
+.entry-box:hover {
+  transform: scale(1.02);
 }
 
-/* Inputs */
 .entry-box input[type="email"],
 .entry-box input[type="password"] {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
+  background-color: #f0f4f8;
   border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
-  transition: border 0.3s;
-}
-
-.entry-box input:focus {
-  border-color: #28a745;
-  outline: none;
-}
-
-/* Submit Button */
-.entry-box input[type="submit"] {
-  width: 100%;
-  background: #28a745;
-  color: #fff;
-  padding: 12px;
-  border: none;
-  border-radius: 6px;
+  padding: 14px;
   font-size: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.entry-box input[type="submit"] {
+  background: linear-gradient(to right, #28a745, #218838);
+  color: #fff;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  margin-top: 15px;
-  transition: background 0.3s;
-}
-
-.entry-box input[type="submit"]:hover {
-  background: #218838;
+  box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
 }
 
 /* Responsive */
@@ -74,30 +55,32 @@
 }
 
 /*=====DASHBOARDS=======*/
+body {
+  background: #f4f6f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 .dashboard-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
   padding: 30px 20px;
 }
 
 /* Top Section */
 .top-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 25px;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .top-container h2 {
-  margin-bottom: 15px;
-  font-size: 36px;   /* bigger */
+  font-size: 32px;
   font-weight: 800;
   color: #222;
+  margin-bottom: 15px;
 }
 
-/* Add Users button */
 .top-container .btn {
   background-color: #007bff;
   color: #fff;
@@ -244,16 +227,44 @@ h3 {
   background: #a71d2a;
 }
 
-/*=========Add Accounts========*/
-/* Container styling */
-form {
-  max-width: 1000px;
-  margin: 20px auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  font-family: Arial, sans-serif;
+@media (max-width: 600px) {
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card .actions {
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .searchBar input {
+    width: 90%;
+  }
+
+  .top-container h2 {
+    font-size: 24px;
+  }
 }
 
+/*=========Add Accounts========*/
+/* Container styling */
+.return-dashboard a {
+  background-color: #28a745;
+  color: #ffffff;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.return-dashboard a:hover {
+  background-color: #218838;
+}
 /* Headings */
 h2, h4 {
   text-align: center;
@@ -264,13 +275,13 @@ h2, h4 {
 /* Split into two columns */
 .student-form {
   display: flex;
-  justify-content: space-between;
-  gap: 40px;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .student-form .left,
 .student-form .right {
-  flex: 1;
+  flex: 1 1 45%;
 }
 
 /* Input fields */
@@ -278,16 +289,26 @@ form label {
   display: block;
   margin-bottom: 6px;
   font-weight: 600;
+  color: #333;
 }
 
 form input,
 form select {
   width: 100%;
-  padding: 8px 10px;
+  padding: 12px 14px;
   border: 1px solid #ccc;
-  border-radius: 6px;
-  margin-bottom: 15px;
-  font-size: 14px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  background-color: #f9f9f9;
+  transition: border 0.3s ease;
+}
+
+form input:focus,
+form select:focus {
+  border-color: #28a745;
+  outline: none;
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.3);
 }
 
 /* Password with button */
@@ -304,17 +325,16 @@ form select {
 /* Buttons */
 button,
 input[type="submit"] {
-  display: block;
   width: 100%;
   background: #28a745;
   color: #fff;
   border: none;
-  padding: 12px;
-  font-size: 15px;
+  padding: 14px;
+  font-size: 16px;
   font-weight: bold;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s ease;
 }
 
 button:hover,
@@ -322,7 +342,6 @@ input[type="submit"]:hover {
   background: #218838;
 }
 
-/* Generate button different */
 button.generate {
   background: #007bff;
 }
@@ -331,9 +350,21 @@ button.generate:hover {
   background: #0056b3;
 }
 
-/* File input */
 input[type="file"] {
-  padding: 5px;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.image-preview {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.image-preview img {
+  max-width: 180px;
+  max-height: 180px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 /* Center the main heading */
@@ -350,19 +381,23 @@ h2 {
 
 /* Center Account Type field */
 .account-type {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.account-type label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 30px 0;
+  font-size: 16px;
   font-weight: bold;
-  margin-right: 10px;
 }
 
 .account-type select {
-  padding: 6px 12px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+  padding: 10px 15px;
+  border: 2px solid #28a745;
+  border-radius: 8px;
+  background: #f9f9f9;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
 }
 
 /* Center container utility */
@@ -427,15 +462,40 @@ h2 {
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .student-form {
     flex-direction: column;
   }
+
+  .student-form .left,
+  .student-form .right {
+    flex: 1 1 100%;
+  }
+
+  button,
+  input[type="submit"] {
+    font-size: 15px;
+    padding: 12px;
+  }
+}
+
+.centered-form-container {
+  margin: 0 auto;
+  display: block;
+  max-width: 700px;  /* Adjust as needed */
 }
 
 /*======Edit Account======*/
 /* Form container */
+form {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 .form-container {
   max-width: 900px;
   margin: 30px auto;

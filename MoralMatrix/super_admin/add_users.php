@@ -120,9 +120,9 @@ if (empty($formValues['password'])) {
 <body>
 <h1>Add New Admin Account</h1>
 
-<a href="dashboard.php">
-    <button type="button">Return to Dashboard</button>
-</a>
+<div class="return-dashboard">
+  <a href="dashboard.php">Return to Dashboard</a>
+</div>
 
 <?php if (!empty($errorMsg)): ?>
 <script>alert("<?php echo addslashes($errorMsg); ?>");</script>
